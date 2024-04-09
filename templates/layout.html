@@ -14,11 +14,11 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home Page 🏠</a>
-        <a href="/about">About us 😊</a>
-        <a href="{% url 'posts:list' %}">Feed 📃</a>
+        <a href="/">Home Page</a>
+        <a href="/about">About us</a>
+        <a href="{% url 'posts:list' %}">Feed</a>
+        <a href="{% url 'users:register' %}">SignUp</a>
     </nav>
-
     <main>
         {% block content %}
             
