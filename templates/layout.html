@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script> 
 </head>
+
 <body>
     <nav>
         <a href="/">Home Page</a>
         <a href="/about">About us</a>
         <a href="{% url 'posts:list' %}">Feed</a>
+
         {% if user.is_authenticated %}
             <a href="{% url 'posts:new-post' %}">New Post</a>
             <span>{{ user.username }}</span>
@@ -25,8 +27,8 @@
                 <button class="form-submit" type="submit">Logout</button>
             </form>
         {% else %}
-            <a href="{% url 'users:register' %}">SignUp</a>
-            <a href="{% url 'users:login' %}">Login</a>
+            <a class="register-button" href="{% url 'users:register' %}">SignUp</a>
+            <a class="login-button" href="{% url 'users:login' %}">Login</a>
         {% endif %}
     </nav>
     <main>

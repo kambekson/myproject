@@ -5,14 +5,15 @@
 {% endblock title %}
     
 {% block content %}
-    <h1>User Login</h1>
+    <div class="WelcomeBack">Welcome back</div>
     <form class ="form-with-validation" action="{% url 'users:login' %}" method = "post">
         {% csrf_token %}
         {{form}}
         {% if request.GET.next %}
             <input type="hidden" name="next" value="{{ request.GET.next }}" />
         {% endif %}
-        <button class="form-submit">Submit</button>
+        <button class="submit-login">Login</button>
+        <a class ="redirect-signup" href="{% url 'users:register' %}">Don't have an account?</a>
     </form>
 {% endblock  %}
     

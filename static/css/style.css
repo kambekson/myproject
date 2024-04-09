@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +8,18 @@
 
 body {
     min-height: 100vh;
-    background-color: black;
-    color: whitesmoke;
+    background-color: #E9F0FF;
     font-size: 3rem;
 }
 
 nav {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 1rem;
-    background-color: #44B78B;
-    color: white;
+    background-color:#FFFFFF;
     font-size: 2.5rem;
+    height: 60px;
 }
+
 
 main {
     padding: 1rem;
@@ -37,9 +40,29 @@ p {
     font-size: 1rem;
 }
 
-a {
+.login-button{
+    position: absolute;
+    right: 0;
+    align-items: center;
+    margin-right: 40px; /* Отступ справа для небольшого пространства от края */
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
     text-decoration: none;
-    color: #81dbb8;
+}
+
+.register-button{
+    position: absolute;
+    right: 0;
+    align-items: center;
+    margin-right: 130px;
+    font-size: 20;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
 }
 
 a:hover {
@@ -52,29 +75,75 @@ a:hover {
     max-width: 800px;
 }
 
-.form-with-validation {
-    font-size: 1rem;
-    padding: 1rem;
+.WelcomeBack{
+    font-size: 50px;
+    margin-top: 30px;
     display: flex;
-    flex-flow: column;
+    justify-content: center; /* Center horizontally */
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.form-with-validation {
+    font-size: 15px;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-optical-sizing: auto;
+    display: flex;;
     gap: 1rem;
+    padding: 1rem;
+    margin-top: 30px; 
+    align-items: center; /* Center children vertically */
+    flex-direction: column; /* Stack children vertically */
+    display: flex; 
 }
 
 .form-with-validation div {
     display: flex;
     flex-flow: column;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
 .form-with-validation input {
-    padding: 0.25rem;
+    padding: 7px;
     max-width: 300px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #1E2E4E;
+    outline-color: invert;
+    background-color: transparent;
 }
 
 .form-submit {
     padding: 0.5rem;
     border-radius: 10px;
     width: 125px;
+}
+
+.submit-login {
+    margin-top: 15px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 300px;
+    background-color: #2ba375;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+
+.redirect-signup{
+    color: #1E2E4E;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-optical-sizing: auto;
 }
 
 .helptext {
