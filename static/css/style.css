@@ -12,15 +12,6 @@ body {
     font-size: 3rem;
 }
 
-nav {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 1rem;
-    background-color:#FFFFFF;
-    font-size: 2.5rem;
-    height: 60px;
-}
-
-
 main {
     padding: 1rem;
 }
@@ -31,7 +22,6 @@ section {
     gap: 1rem;
 }
 
-h1,
 h2 {
     font-size: 2.5rem;
 }
@@ -40,8 +30,18 @@ p {
     font-size: 1rem;
 }
 
+nav {
+    position: fixed;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    background-color:#FFFFFF;
+    font-size: 2.5rem;
+    height: 60px;
+    width: 100%;
+}
+
 .login-button{
-    position: absolute;
+    position: fixed;
     right: 0;
     align-items: center;
     margin-right: 40px; /* Отступ справа для небольшого пространства от края */
@@ -53,7 +53,7 @@ p {
 }
 
 .register-button{
-    position: absolute;
+    position: fixed;
     right: 0;
     align-items: center;
     margin-right: 130px;
@@ -65,8 +65,86 @@ p {
     text-decoration: none;
 }
 
-a:hover {
-    opacity: .85;
+.home-button{
+    position: fixed;
+    nav-left: 0;
+    align-items: center;
+    margin-left: 40px;
+    font-size: 20;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.about-button{
+    position: fixed;
+    nav-left: 0;
+    margin-left: 220px;
+    align-items: center;
+    font-size: 20;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.feed-button{
+    position: fixed;
+    nav-left: 0;
+    align-items: center;
+    margin-left: 370px;
+    font-size: 20;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.newpost-button{
+    position: fixed;
+    nav-left: 0;
+    align-items: center;
+    margin-left: 470px;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.logout{
+    padding: 15px;
+    position: fixed;
+    nav-left: 0;
+    top: 0;
+    margin-left: 1360px;
+}
+
+.logout-button{
+    position: fixed;
+    color:#1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+.username{
+    position: fixed;
+    padding: 15px;
+    nav-left: 0;
+    top: 0;
+    margin-left: 1270px;
+    color:#1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
 }
 
 .banner {
@@ -77,7 +155,7 @@ a:hover {
 
 .WelcomeBack{
     font-size: 50px;
-    margin-top: 30px;
+    margin-top: 70px;
     display: flex;
     justify-content: center; /* Center horizontally */
     color: #1E2E4E;
@@ -116,14 +194,23 @@ a:hover {
     height: 40px;
     border-radius: 10px;
     border: 2px solid #1E2E4E;
-    outline-color: invert;
+    outline: none;
     background-color: transparent;
 }
 
-.form-submit {
+.submit-button {
+    margin-top: 15px;
     padding: 0.5rem;
     border-radius: 10px;
-    width: 125px;
+    width: 300px;
+    background-color: #2ba375;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 25px;
+    border: none;   
 }
 
 .submit-login {
@@ -133,7 +220,11 @@ a:hover {
     width: 300px;
     background-color: #2ba375;
     color: white;
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 25px;
     border: none;
 }
 
@@ -145,6 +236,54 @@ a:hover {
     font-style: normal;
     font-optical-sizing: auto;
 }
+
+.feed{
+    margin-top: 90px;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feed h1{
+    font-size: 45px;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-optical-sizing: auto; 
+    margin-left: 400px;
+    margin-top: 20px;
+}
+
+.feed a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-optical-sizing: auto; 
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.feed p{
+    font-size: 15px;
+    color: #1E2E4E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-optical-sizing: auto; 
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 .helptext {
     font-size: 1rem;
@@ -164,17 +303,3 @@ a:hover {
     content: '🚨 ';
 }
 
-
-.logout {
-    display: inline-block;
-}
-
-.logout-button {
-    font-size: 2.5rem;
-    background-color: rgb(0, 0, 0, 0);
-    border: none;
-}
-
-.logout-button:hover {
-    opacity: .85;
-}

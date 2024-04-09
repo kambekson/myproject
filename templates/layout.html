@@ -15,16 +15,16 @@
 
 <body>
     <nav>
-        <a href="/">Home Page</a>
-        <a href="/about">About us</a>
-        <a href="{% url 'posts:list' %}">Feed</a>
+        <a class="home-button" href="/">Home Page</a>
+        <a class="about-button" href="/about">About us</a>
+        <a class="feed-button" href="{% url 'posts:list' %}">Feed</a>
 
         {% if user.is_authenticated %}
-            <a href="{% url 'posts:new-post' %}">New Post</a>
-            <span>{{ user.username }}</span>
+            <a class="newpost-button" href="{% url 'posts:new-post' %}">New Post</a>
+            <span class="username">{{ user.username }}</span>
             <form class="logout" action="{% url 'users:logout' %}" method="post">
                 {% csrf_token %}
-                <button class="form-submit" type="submit">Logout</button>
+                <button class="logout-button">Logout</button>
             </form>
         {% else %}
             <a class="register-button" href="{% url 'users:register' %}">SignUp</a>
