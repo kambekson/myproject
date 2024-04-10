@@ -5,11 +5,22 @@
 {% endblock title %}
     
 {% block content %}
-    <body>
-        <h1>{{ user_profile.user.username }} Profile</h1>
-        <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
-        <p><strong>Location:</strong> {{ user_profile.location }}</p>
-    </body>
-
-{% endblock  %}
-    
+    <div class="profile-container">
+        <img src="{{ user.profile_picture.url }}" alt="{{ user.first_name }} {{ user.last_name }} profile picture" class="profile-picture">
+        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+        <p>{{ user.username }}</p>
+        <p>{{ user.email }}</p>
+        <p>{{ user.date_of_birth }}</p>
+        <p>{{ user.bio }}</p>
+        <p>{{ user.status }}</p>
+        <ul>
+            {% for post in user_posts %}
+                <li>
+                    <a href="{% url 'posts:detail' post.slug %}">{{ post.title }}</a>
+                </li>
+            {% empty %}
+                <li>This user has no posts yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

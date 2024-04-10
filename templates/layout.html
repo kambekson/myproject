@@ -10,7 +10,8 @@
         {% endblock  %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script> 
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
 
         {% if user.is_authenticated %}
             <a class="newpost-button" href="{% url 'posts:new-post' %}">New Post</a>
-            <span class="username">{{ user.username }}</span>
+            <span class="username"><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></span>
             <form class="logout" action="{% url 'users:logout' %}" method="post">
                 {% csrf_token %}
                 <button class="logout-button">Logout</button>
