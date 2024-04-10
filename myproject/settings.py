@@ -32,6 +32,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myproject.urls'
 
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # По умолчанию
+    'users.backends.CustomUserBackend',  # Новый бэкенд для аутентификации по email и юзернейму
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -56,6 +62,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
