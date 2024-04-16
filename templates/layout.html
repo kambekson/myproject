@@ -16,20 +16,20 @@
 
 <body>
     <nav>
-        <a class="home-button" href="/">Home Page</a>
-        <a class="about-button" href="/about">About us</a>
-        <a class="feed-button" href="{% url 'posts:list' %}">Feed</a>
+        <a class="home-button" href="/">Главная</a>
+        <a class="about-button" href="/about">О проекте</a>
+        <a class="feed-button" href="{% url 'posts:list' %}">Лента</a>
 
         {% if user.is_authenticated %}
-            <a class="newpost-button" href="{% url 'posts:new-post' %}">New Post</a>
+            <a class="newpost-button" href="{% url 'posts:new-post' %}">Новый пост</a>
             <span class="username"><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></span>
             <form class="logout" action="{% url 'users:logout' %}" method="post">
                 {% csrf_token %}
-                <button class="logout-button">Logout</button>
+                <button class="logout-button">Выйти</button>
             </form>
         {% else %}
-            <a class="register-button" href="{% url 'users:register' %}">SignUp</a>
-            <a class="login-button" href="{% url 'users:login' %}">Login</a>
+            <a class="register-button" href="{% url 'users:register' %}">Регистрация</a>
+            <a class="login-button" href="{% url 'users:login' %}">Войти</a>
         {% endif %}
     </nav>
     <main>

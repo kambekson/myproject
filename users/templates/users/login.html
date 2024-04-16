@@ -5,11 +5,11 @@
 {% endblock title %}
     
 {% block content %}
-    <div class="WelcomeBack">Welcome back</div>
+    <div class="WelcomeBack">Добро пожаловать</div>
     <form class ="form-with-validation" action="{% url 'users:login' %}" method = "post">
         {% csrf_token %}
         {{form}}
-        <button class="submit-login">Login</button>
-        <a class ="redirect-signup" href="{% url 'users:register' %}">Don't have an account?</a>
+        <button class="submit-login">Войти</button>
+        <a class ="redirect-signup" href="{% url 'users:register' %}">У вас нет аккаунта?</a>
     </form>
 {% endblock  %}
