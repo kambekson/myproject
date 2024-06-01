@@ -1,6 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import CustomUser
+from .validators import (
+    validate_password_length,
+    validate_password_uppercase,
+    validate_password_lowercase,
+    validate_password_digit,
+    validate_password_username,
+)
 # from .widgets import CustomDateInput
 
 class CustomUserCreationForm(UserCreationForm):
@@ -34,6 +41,21 @@ class CustomUserCreationForm(UserCreationForm):
             'password_mismatch': "Пароли не совпадают.",
             'password1_invalid': "Пароль должен содержать хотя бы 8 символов, включая буквы, цифры и специальные символы.",
         }
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+        username = self.cleaned_data.get('username')
+
+        if password1 and password2 and password1 != password2:
+            self.add_error('password2', 'Пароли не совпадают.')
+        
+        validate_password_length(password1)
+        validate_password_uppercase(password1)
+        validate_password_lowercase(password1)
+        validate_password_digit(password1)
+        validate_password_username(password1, username)
+        
+        return password2
 
     def save(self, commit=True):
         user = super(CustomUserCreationForm, self).save(commit=False)

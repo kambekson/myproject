@@ -1,15 +1,203 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Регистрация нового пользователя
+Регистрация нового пользователя
 {% endblock title %}
-    
+
 {% block content %}
-    <h1>Регистрация нового пользователя</h1>
-    <form class ="form-with-validation" action="{% url 'users:register' %}" method = "post">
-        {% csrf_token %}
-        {{ form }}
-        <button class="submit-button">Потвердить</button>
-    </form>
-{% endblock  %}
-    
+<section class="footer-sec">
+    <div class="ite">
+        <div class="itemo mt-100">
+            <div class="single-itemo">
+                <img src="/static/images/decor/1.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/2.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/2.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/2.png" alt />
+            </div>
+        </div>
+        <div class="itemo mb-0">
+            <div class="single-itemo">
+                <img src="/static/images/decor/3.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+        </div>
+        <div class="itemo mt-50">
+            <div class="single-itemo">
+                <img src="/static/images/decor/5.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+        </div>
+        <div class="itemo mt-100">
+            <div class="single-itemo">
+                <img src="/static/images/decor/7.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+        </div>
+        <div class="itemo mb-0">
+            <div class="single-itemo">
+                <img src="/static/images/decor/9.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/10.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/10.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/10.png" alt />
+            </div>
+        </div>
+        <div class="itemo mt-50">
+            <div class="single-itemo">
+                <img src="/static/images/decor/11.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/12.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/12.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/12.png" alt />
+            </div>
+        </div>
+        <div class="itemo">
+            <div class="single-itemo">
+                <img src="/static/images/decor/13.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/14.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/14.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/14.png" alt />
+            </div>
+        </div>
+        <div class="itemo mt-100">
+            <div class="single-itemo">
+                <img src="/static/images/decor/7.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/8.png" alt />
+            </div>
+        </div>
+        <div class="itemo mb-0">
+            <div class="single-itemo">
+                <img src="/static/images/decor/3.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/4.png" alt />
+            </div>
+        </div>
+        <div class="itemo mt-50">
+            <div class="single-itemo">
+                <img src="/static/images/decor/5.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+            <div class="single-itemo">
+                <img src="/static/images/decor/6.png" alt />
+            </div>
+        </div>
+    </div>
+
+    <div class="content-signup">
+        <h1>Регистрация нового пользователя</h1>
+        <div class="signup">
+            <h1>Зарегистрируйся в TrendBoard</h1>
+            <h4>Что бы найти новые идеи</h4>
+            <form class="field-group-signup" action="{% url 'users:register' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="column">
+                        <div class="form-group">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.date_of_birth.label_tag }}
+                            {{ form.date_of_birth }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.profile_picture.label_tag }}
+                            {{ form.profile_picture }}
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password1.label_tag }}
+                            {{ form.password1 }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password2.label_tag }}
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                </div>
+                <button class="signup-btn">Потвердить</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
